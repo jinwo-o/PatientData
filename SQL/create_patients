@@ -1,8 +1,9 @@
 # SQL Script that creates fake patient data
 # Create the database parameters; ID, Name, Gender, Disease
-CREATE DATABASE patients;
+CREATE DATABASE IF NOT EXISTS patients;
 USE patients;
-CREATE TABLE patient_table ( id smallint unsigned not null, name varchar(20) not null, gender varchar(20) not null, \
+
+CREATE TABLE IF NOT EXISTS patient_table ( id smallint unsigned not null, name varchar(20) not null, gender varchar(20) not null, \
 disease varchar(50), constraint pk_example primary key (id) );
 
 
