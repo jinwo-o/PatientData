@@ -3,8 +3,8 @@
 CREATE DATABASE IF NOT EXISTS patients;
 USE patients;
 
-CREATE TABLE IF NOT EXISTS patient_table ( id smallint unsigned not null, name varchar(20) not null, gender varchar(20) not null, \
-disease varchar(50), constraint pk_example primary key (id) );
+CREATE TABLE IF NOT EXISTS patient_table ( patient_id smallint unsigned not null, name varchar(20) not null, gender varchar(20) not null, \
+disease varchar(50) not null, constraint pk_example primary key (patient_id) );
 
 
 # Create a loop function; Generates 100 Patients
