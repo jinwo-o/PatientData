@@ -25,7 +25,7 @@ SET gender_str = 'M';
 SET disease_str = 'flu';
 
 WHILE id_int  <= 100 DO
-INSERT INTO patient_table ( id, name, gender, disease ) VALUES ( id_int, name_str, gender_str, disease_str );
+INSERT INTO patient_table ( patient_id, name, gender, disease ) VALUES ( id_int, name_str, gender_str, disease_str );
 SET  id_int = id_int + 1; 
 END WHILE;
 
