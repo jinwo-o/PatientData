@@ -28,36 +28,6 @@ func init() {
     "version": "1.0.0"
   },
   "paths": {
-    "/list": {
-      "post": {
-        "description": "Lists all patient_id's, names, genders, and diseases",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "summary": "Lists all patients",
-        "operationId": "listPatients",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Patient"
-              }
-            }
-          },
-          "400": {
-            "description": "invalid input, object invalid"
-          },
-          "409": {
-            "description": "an existing item already exists"
-          }
-        }
-      }
-    },
     "/patient": {
       "post": {
         "description": "Adds a patient to the system",
@@ -91,6 +61,30 @@ func init() {
           }
         }
       }
+    },
+    "/patient_list": {
+      "get": {
+        "description": "Lists all patient_id's, names, genders, and diseases",
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Lists all patients",
+        "operationId": "listPatients",
+        "responses": {
+          "200": {
+            "description": "List of all patients",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Patient"
+              }
+            }
+          },
+          "400": {
+            "description": "invalid input, object invalid"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -116,6 +110,17 @@ func init() {
           "type": "string",
           "x-go-custom-tag": "db:\"patient_id\"",
           "x-nullable": true
+        }
+      }
+    },
+    "Patient_List": {
+      "type": "object",
+      "properties": {
+        "all_patients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Patient"
+          }
         }
       }
     }
@@ -132,36 +137,6 @@ func init() {
     "version": "1.0.0"
   },
   "paths": {
-    "/list": {
-      "post": {
-        "description": "Lists all patient_id's, names, genders, and diseases",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "summary": "Lists all patients",
-        "operationId": "listPatients",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Patient"
-              }
-            }
-          },
-          "400": {
-            "description": "invalid input, object invalid"
-          },
-          "409": {
-            "description": "an existing item already exists"
-          }
-        }
-      }
-    },
     "/patient": {
       "post": {
         "description": "Adds a patient to the system",
@@ -195,6 +170,30 @@ func init() {
           }
         }
       }
+    },
+    "/patient_list": {
+      "get": {
+        "description": "Lists all patient_id's, names, genders, and diseases",
+        "produces": [
+          "application/json"
+        ],
+        "summary": "Lists all patients",
+        "operationId": "listPatients",
+        "responses": {
+          "200": {
+            "description": "List of all patients",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Patient"
+              }
+            }
+          },
+          "400": {
+            "description": "invalid input, object invalid"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -220,6 +219,17 @@ func init() {
           "type": "string",
           "x-go-custom-tag": "db:\"patient_id\"",
           "x-nullable": true
+        }
+      }
+    },
+    "Patient_List": {
+      "type": "object",
+      "properties": {
+        "all_patients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Patient"
+          }
         }
       }
     }

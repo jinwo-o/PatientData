@@ -35,7 +35,7 @@ func (o *ListPatientsURL) SetBasePath(bp string) {
 func (o *ListPatientsURL) Build() (*url.URL, error) {
 	var _result url.URL
 
-	var _path = "/list"
+	var _path = "/patient_list"
 
 	_basePath := o._basePath
 	_result.Path = golangswaggerpaths.Join(_basePath, _path)

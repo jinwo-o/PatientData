@@ -16,7 +16,7 @@ import (
 // ListPatientsOKCode is the HTTP code returned for type ListPatientsOK
 const ListPatientsOKCode int = 200
 
-/*ListPatientsOK OK
+/*ListPatientsOK List of all patients
 
 swagger:response listPatientsOK
 */
@@ -82,28 +82,4 @@ func (o *ListPatientsBadRequest) WriteResponse(rw http.ResponseWriter, producer 
 	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
 
 	rw.WriteHeader(400)
-}
-
-// ListPatientsConflictCode is the HTTP code returned for type ListPatientsConflict
-const ListPatientsConflictCode int = 409
-
-/*ListPatientsConflict an existing item already exists
-
-swagger:response listPatientsConflict
-*/
-type ListPatientsConflict struct {
-}
-
-// NewListPatientsConflict creates ListPatientsConflict with default headers values
-func NewListPatientsConflict() *ListPatientsConflict {
-
-	return &ListPatientsConflict{}
-}
-
-// WriteResponse to the client
-func (o *ListPatientsConflict) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
-
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
-
-	rw.WriteHeader(409)
 }

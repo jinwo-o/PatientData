@@ -29,7 +29,7 @@ func NewListPatients(ctx *middleware.Context, handler ListPatientsHandler) *List
 	return &ListPatients{Context: ctx, Handler: handler}
 }
 
-/*ListPatients swagger:route POST /list listPatients
+/*ListPatients swagger:route GET /patient_list listPatients
 
 Lists all patients
 

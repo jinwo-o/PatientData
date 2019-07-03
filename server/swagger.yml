@@ -17,7 +17,7 @@ schemes:
 paths:
   /patient:
     post:
-      summary: "adds a patient item"
+      summary: "Adds a patient item"
       description: "Adds a patient to the system"
       operationId: "addPatient"
       consumes:
@@ -38,27 +38,27 @@ paths:
           description: "invalid input, object invalid"
         409:
           description: "an existing item already exists"
-  /list:
-    post:
+
+  /patient_list:
+    get:
       summary: "Lists all patients"
       description: "Lists all patient_id's, names, genders, and diseases"
       operationId: "listPatients"
-      consumes:
-      - "application/json"
       produces:
       - "application/json"
       responses:
         200:
-          description: "OK"
+          description: "List of all patients"
           schema:
             type: "array"
             items:
+              # type: "string"?
               $ref: "#/definitions/Patient"
         400:
           description: "invalid input, object invalid"
-        409:
-          description: "an existing item already exists"
+
 definitions:
+  #Patient Object has patient_id, name, gender, disease
   Patient:
     type: object
     properties:
@@ -78,20 +78,11 @@ definitions:
         type: string
         x-nullable: true         
         x-go-custom-tag: "db:\"disease\""
-  #listof Patients
-  # List:
-  #   type: object
-  #   properties:
-  #     type: array
-  #     items:
-  #       $ref: "#/definitions/Patient"
-  # Error:
-  #   type: object
-  #   required:
-  #     - message
-  #   properties:
-  #     code:
-  #       type: integer
-  #       format: int64
-  #     message:
-  #       type: string
+  #Patients Array FIX THIS
+  Patient_List:
+    type: object
+    properties:
+      all_patients:
+        type: array
+        items:
+          $ref: "#/definitions/Patient"

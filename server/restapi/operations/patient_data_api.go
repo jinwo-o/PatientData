@@ -252,10 +252,10 @@ func (o *PatientDataAPI) initHandlerCache() {
 	}
 	o.handlers["POST"]["/patient"] = NewAddPatient(o.context, o.AddPatientHandler)
 
-	if o.handlers["POST"] == nil {
-		o.handlers["POST"] = make(map[string]http.Handler)
+	if o.handlers["GET"] == nil {
+		o.handlers["GET"] = make(map[string]http.Handler)
 	}
-	o.handlers["POST"]["/list"] = NewListPatients(o.context, o.ListPatientsHandler)
+	o.handlers["GET"]["/patient_list"] = NewListPatients(o.context, o.ListPatientsHandler)
 
 }
 
