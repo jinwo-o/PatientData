@@ -1,0 +1,88 @@
+---
+swagger: "2.0"
+info:
+  description: Based on Golang, outputs an array of patients, patient_id, gender,
+    and disease in json
+  title: PatientData
+  version: 1.0.0
+#   contact:
+#     email: "info@distributedgenomics.ca"
+#   license:
+#     name: "GPL"
+#     url: "https://www.gnu.org/licenses/gpl-3.0.en.html"
+# host: "virtserver.swaggerhub.com"
+# basePath: "/Jtree/metadata/0.1.0"
+schemes:
+- "http"
+paths:
+  /patient:
+    post:
+      summary: "Adds a patient item"
+      description: "Adds a patient to the system"
+      operationId: "addPatient"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "patient"
+        description: "Patient"
+        required: false
+        schema:
+          $ref: "#/definitions/Patient"
+      responses:
+        201:
+          description: "item created"
+        400:
+          description: "invalid input, object invalid"
+        409:
+          description: "an existing item already exists"
+
+  /patient_list:
+    get:
+      summary: "Lists all patients"
+      description: "Lists all patient_id's, names, genders, and diseases"
+      operationId: "listPatients"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "List of all patients"
+          schema:
+            type: "array"
+            items:
+              # type: "string"?
+              $ref: "#/definitions/Patient"
+        400:
+          description: "invalid input, object invalid"
+
+definitions:
+  #Patient Object has patient_id, name, gender, disease
+  Patient:
+    type: object
+    properties:
+      patient_id:
+        type: string
+        x-nullable: true        
+        x-go-custom-tag: "db:\"patient_id\""
+      name:
+        type: string
+        x-nullable: true         
+        x-go-custom-tag: "db:\"name\""
+      gender: 
+        type: string 
+        x-nullable: true         
+        x-go-custom-tag: "db:\"gender\""
+      disease: 
+        type: string
+        x-nullable: true         
+        x-go-custom-tag: "db:\"disease\""
+  #Patients Array FIX THIS
+  Patient_List:
+    type: object
+    properties:
+      all_patients:
+        type: array
+        items:
+          $ref: "#/definitions/Patient"

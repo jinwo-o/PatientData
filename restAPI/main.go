@@ -15,8 +15,8 @@ import (
 func main() {
 	dbName := os.Getenv("patients")
 	dbPass := os.Getenv("root1234")
-	dbHost := os.Getenv("DB_HOST")
-	dbPort := os.Getenv("DB_PORT")
+	dbHost := os.Getenv("127.0.0.1")
+	dbPort := os.Getenv("3306")
 
 	connection, err := driver.ConnectSQL(dbHost, dbPort, "root", dbPass, dbName)
 	if err != nil {
@@ -33,17 +33,18 @@ func main() {
 		rt.Mount("/posts", postRouter(pHandler))
 	})
 
-	fmt.Println("Server listen at :3306")
-	http.ListenAndServe(":3306", r)
+	fmt.Println("Server listen at :8080")
+	http.ListenAndServe(":8080", r)
 }
 
 func postRouter(pHandler *ph.Post) http.Handler {
 	r := chi.NewRouter()
 	r.Get("/", pHandler.Fetch)
-	r.Get("/{id:[0-9]+}", pHandler.GetByID)
-	r.Post("/", pHandler.Create)
-	r.Put("/{id:[0-9]+}", pHandler.Update)
-	r.Delete("/{id:[0-9]+}", pHandler.Delete)
+	// r.Get("/{id:[0-9]+}", pHandler.GetByID)
+	// r.Post("/", pHandler.Create)
+	// r.Put("/{id:[0-9]+}", pHandler.Update)
+	// r.Delete("/{id:[0-9]+}", pHandler.Delete)
+	fmt.Print(r)
 
 	return r
 }

@@ -3,6 +3,7 @@ package post
 import (
 	"context"
 	"database/sql"
+	"fmt"
 
 	models "PatientData/restAPI/models"
 	pRepo "PatientData/restAPI/repository"
@@ -20,12 +21,17 @@ type mysqlPostRepo struct {
 }
 
 func (m *mysqlPostRepo) fetch(ctx context.Context, query string, args ...interface{}) ([]*models.Post, error) {
+	fmt.Println("fetch")
 	rows, err := m.Conn.QueryContext(ctx, query, args...)
+	fmt.Println("err:")
+	fmt.Print(err)
+	fmt.Println("rows:")
+	fmt.Print(rows)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-
+	fmt.Println("we made it")
 	payload := make([]*models.Post, 0)
 	for rows.Next() {
 		data := new(models.Post)
@@ -45,15 +51,16 @@ func (m *mysqlPostRepo) fetch(ctx context.Context, query string, args ...interfa
 }
 
 func (m *mysqlPostRepo) Fetch(ctx context.Context, num int64) ([]*models.Post, error) {
-	query := "Select id, title, content From posts limit ?"
+	fmt.Println("Fetch")
+	query := "Select patient_id, name, gender, disease From patient_table"
 
 	return m.fetch(ctx, query, num)
 }
 
-func (m *mysqlPostRepo) GetByID(ctx context.Context, Patient_id int64) (*models.Post, error) {
-	query := "Select id, title, content From posts where id=?"
+func (m *mysqlPostRepo) GetByID(ctx context.Context, ID int64) (*models.Post, error) {
+	query := "Select patient_id, name, gender, disease From patients where patient_id=?"
 
-	rows, err := m.fetch(ctx, query, Patient_id)
+	rows, err := m.fetch(ctx, query, ID)
 	if err != nil {
 		return nil, err
 	}
@@ -69,7 +76,7 @@ func (m *mysqlPostRepo) GetByID(ctx context.Context, Patient_id int64) (*models.
 }
 
 func (m *mysqlPostRepo) Create(ctx context.Context, p *models.Post) (int64, error) {
-	query := "Insert posts SET title=?, content=?"
+	query := "Insert patients SET name=?, gender=?, disease=?"
 
 	stmt, err := m.Conn.PrepareContext(ctx, query)
 	if err != nil {
