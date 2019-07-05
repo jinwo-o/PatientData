@@ -1,10 +1,10 @@
 # **PatientData**
 
-Outputs an array of patient_id, name, gender, and disease 
+Outputs an array of patient_id, name, gender, and disease. PatientData RESTAPI was written in Golang, with a mySQL database, and routed using chi
 
 **Prerequisites**
 
-Need mySQL, golang
+Need mySQL, golang, and other go-dependencies
 
 **1. Setup Database**
 
