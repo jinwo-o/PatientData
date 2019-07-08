@@ -14,10 +14,11 @@ type DB struct {
 // DBConn ...
 var dbConn = &DB{}
 
-
 // ConnectSQL ...
 func ConnectSQL(host, port, uname, pass, dbname string) (*DB, error) {
+	// For local use, without docker database
 	// d, err := sql.Open("mysql", "root:root1234@tcp(127.0.0.1)/patients")
+	// With docker database
 	d, err := sql.Open("mysql", "docker:docker@tcp(db:3306)/patients")
 
 	if err != nil {
@@ -26,4 +27,3 @@ func ConnectSQL(host, port, uname, pass, dbname string) (*DB, error) {
 	dbConn.SQL = d
 	return dbConn, err
 }
-
