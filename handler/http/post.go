@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"PatientData/restAPI/driver"
-	repository "PatientData/restAPI/repository"
-	post "PatientData/restAPI/repository/post"
+	"github.com/jinwo-o/PatientData/driver"
+	repository "github.com/jinwo-o/PatientData/repository"
+	post "github.com/jinwo-o/PatientData/repository/post"
 )
 
 // NewPostHandler ...

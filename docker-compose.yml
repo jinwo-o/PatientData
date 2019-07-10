@@ -13,10 +13,11 @@ services:
       - "3306:3306"
     tty: true
   app:
-    build:
-      context: ./restAPI
     volumes:
-      - "./../../:/go"
+      # - "./:/go"
+      - "./../../../../:/go"
+    build:
+      context: ./
     container_name: golang_app
     ports:
       - "8080:8080"

@@ -4,8 +4,8 @@ import (
 	"context"
 	"database/sql"
 
-	models "PatientData/restAPI/models"
-	pRepo "PatientData/restAPI/repository"
+	models "github.com/jinwo-o/PatientData/models"
+	pRepo "github.com/jinwo-o/PatientData/repository"
 )
 
 // NewSQLPostRepo retunrs implement of post repository interface

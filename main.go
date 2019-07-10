@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"PatientData/restAPI/driver"
-	ph "PatientData/restAPI/handler/http"
+	"github.com/jinwo-o/PatientData/driver"
+	ph "github.com/jinwo-o/PatientData/handler/http"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"

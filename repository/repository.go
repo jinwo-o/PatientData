@@ -3,7 +3,7 @@ package repsitory
 import (
 	"context"
 
-	"PatientData/restAPI/models"
+	"github.com/jinwo-o/PatientData/models"
 )
 
 type PostRepo interface {
