@@ -13,9 +13,6 @@ services:
       - "3306:3306"
     tty: true
   app:
-    volumes:
-      # - "./:/go"
-      - "./../../../../:/go"
     build:
       context: ./
     container_name: golang_app
@@ -23,4 +20,6 @@ services:
       - "8080:8080"
     tty: true
     depends_on:
+      - db
+    links:
       - db
