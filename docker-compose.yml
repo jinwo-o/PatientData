@@ -13,9 +13,9 @@ services:
       - "3306:3306"
     tty: true
   app:
-    volumes:
+      #volumes:
       # - "./:/go"
-      - "./../../../../:/go"
+      #- "./../../../../:/go"
     build:
       context: ./
     container_name: golang_app
@@ -24,3 +24,5 @@ services:
     tty: true
     depends_on:
       - db
+    links:
+      -  db
