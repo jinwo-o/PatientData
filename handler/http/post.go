@@ -21,7 +21,7 @@ type Post struct {
 	repo repository.PostRepo
 }
 
-// Fetch all post dataz
+// Fetch all post data
 func (p *Post) Fetch(w http.ResponseWriter, r *http.Request) {
 	payload, _ := p.repo.Fetch(r.Context(), 5)
 
