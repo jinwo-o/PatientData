@@ -1,0 +1,7 @@
+#!/bin/bash
+
+IP=$(curl localhost:8080/posts)
+
+data={"data":$IP}
+
+echo "$data" > patients.json
