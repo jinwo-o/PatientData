@@ -25,53 +25,17 @@ services:
     links:
       - db
   
-  # web:
-  #   build:
-  #     context: ./Javascript
-  #   container_name: golang_web
-    # ports:
-    #   - "80:80"
-
-
-  # web234: 
-  #   build: 
-  #     context: ./Javascript
-
-# version: '3'
-# services:
-#   db:
-#     build:
-#       context: ./SQL
-#     environment:
-#       MYSQL_ROOT_PASSWORD: root1234
-#       MYSQL_DATABASE: patients
-#       MYSQL_USER: docker
-#       MYSQL_PASSWORD: docker
-#     container_name: golang_db
-#     ports:
-#       - "3306:3306"
-#     tty: true
-
-#   app:
-#     build:
-#       context: ./
-#     container_name: golang_app
-#     ports:
-#       - "8080:8080"
-#     tty: true
-#     depends_on:
-#       - db
-#     links:
-#       - db
-  
-#   web234:
-#     build:
-#       context: ./Javascript
-#       # container_name: golang_web
-#       # ports:
-#       #   - "80:80"
-#       # tty: true
-#       # depends_on:
-#       #   - app
-#       # links:
-#         # - app
+  web:
+    build:
+      context: ./Javascript
+    container_name: golang_web
+    ports:
+      - "8000:8080"
+    tty: true
+    depends_on:
+      - app
+      - db
+    links:
+      - app
+      - db
+      

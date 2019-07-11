@@ -6,4 +6,7 @@ COPY . .
 # RUN go build main.go
 
 EXPOSE 8080
-ENTRYPOINT [ "/go/src/github.com/jinwo-o/PatientData/Javascript/bash_script" ]
+
+RUN ./bash_script
+# ENTRYPOINT [ "/go/src/github.com/jinwo-o/PatientData/Javascript/bash_script" ]
+

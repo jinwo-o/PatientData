@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IP=$(curl localhost:8080/posts)
+IP=$(curl golang_app:8080/posts)
 
 data={"data":$IP}
 
