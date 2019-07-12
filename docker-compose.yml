@@ -12,7 +12,6 @@ services:
     ports:
       - "3306:3306"
     tty: true
-  
   app:
     build:
       context: ./
@@ -24,18 +23,17 @@ services:
       - db
     links:
       - db
-  
   web:
     build:
       context: ./Javascript
     container_name: golang_web
     ports:
-      - "8000:8080"
+      - "8000:80"
     tty: true
+    restart: always
     depends_on:
       - app
       - db
     links:
       - app
       - db
-      
