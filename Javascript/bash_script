@@ -1,7 +1,8 @@
 #!/bin/bash
 
-IP=$(curl golang_app:8080/posts)
+IP=$(curl app:8080/posts)
 
-data={"data":$IP}
+data={'"data"':$IP}
 
 echo "$data" > patients.json
+

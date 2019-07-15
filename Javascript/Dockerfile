@@ -45,21 +45,13 @@ EXPOSE 80 443 3306
 ADD init.sh /usr/local/bin/
 RUN chmod 777 /usr/local/bin/init.sh
 
-# Start the init script
-ENTRYPOINT ["/usr/local/bin/init.sh"]
-
-
-# WORKDIR /go/src/github.com/jinwo-o/PatientData/Javascript
+# Copy php file and bash_script
 COPY datatable.php /www
 COPY bash_script /www
-#REMOVE THIS LATER, right now it is showing "data": instead of data
-COPY patients.json /www
 
 WORKDIR /www
 # patients.json is not loading
-# RUN /bin/bash -c "./bash_script"
+RUN ./bash_script
 
-# RUN ./bash_script
-# ENTRYPOINT [ "/go/src/github.com/jinwo-o/PatientData/Javascript/bash_script" ]
-
-# RUN /bin/bash -c "cat patients.json"
+# Start the init script
+ENTRYPOINT ["/usr/local/bin/init.sh"]
