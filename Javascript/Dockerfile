@@ -40,18 +40,19 @@ RUN ln -sf /opt/lampp/lampp /usr/bin/lampp
 RUN echo "export PATH=\$PATH:/opt/lampp/bin/" >> /root/.bashrc
 RUN echo "export TERM=xterm" >> /root/.bashrc
 
-EXPOSE 80 443 3306
+EXPOSE 80
 
 ADD init.sh /usr/local/bin/
 RUN chmod 777 /usr/local/bin/init.sh
 
 # Copy php file and bash_script
 COPY datatable.php /www
-COPY bash_script /www
+COPY bash_script.sh /www
 
 WORKDIR /www
 # patients.json is not loading
-RUN ./bash_script
 
 # Start the init script
 ENTRYPOINT ["/usr/local/bin/init.sh"]
+
+# RUN /www/bash_script.sh

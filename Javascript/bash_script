@@ -1,8 +1,0 @@
-#!/bin/bash
-
-IP=$(curl app:8080/posts)
-
-data={'"data"':$IP}
-
-echo "$data" > patients.json
-
