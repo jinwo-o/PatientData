@@ -12,10 +12,6 @@ services:
     ports:
       - "3306:3306"
     tty: true
-    # command: >
-    #   /bin/bash -c "
-    #     sleep 5;
-    #     nc -lk 0.0.0.0 3306;"
 
   app:
     build:
@@ -28,10 +24,6 @@ services:
       - db
     links:
       - db
-    command: >
-      /bin/bash -c "
-        sleep 5;
-        nc -lk 0.0.0.0 8080;"
 
   web:
     build:
@@ -47,12 +39,3 @@ services:
     links:
       - app
       - db
-    command: ["-c", "./bash_script"]
-    # entrypoint: ["/bin/sh"]
-
-  start_dependencies:
-    image: dadarek/wait-for-dependencies
-    depends_on:
-      - app
-      - db
-    command: app:8080 db:3306
