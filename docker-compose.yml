@@ -1,8 +1,7 @@
 version: '3'
 services:
   db:
-    build:
-      context: ./SQL
+    build: ./SQL
     environment:
       MYSQL_ROOT_PASSWORD: root1234
       MYSQL_DATABASE: patients
@@ -14,8 +13,7 @@ services:
     tty: true
 
   app:
-    build:
-      context: ./
+    build: ./
     container_name: golang_app
     ports:
       - "8080:8080"
@@ -26,13 +24,10 @@ services:
       - db
 
   web:
-    build:
-      context: ./Javascript
+    build: ./webapp
     container_name: golang_web
     ports:
-      - "8000:80"
-    tty: true
-    restart: always
+      - "10001:10001"
     depends_on:
       - app
       - db

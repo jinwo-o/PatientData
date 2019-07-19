@@ -1,0 +1,602 @@
+[
+  {
+    "ID": 1,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 2,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 3,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "flu"
+  },
+  {
+    "ID": 4,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 5,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 6,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "flu"
+  },
+  {
+    "ID": 7,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 8,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "flu"
+  },
+  {
+    "ID": 9,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "flu"
+  },
+  {
+    "ID": 10,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "flu"
+  },
+  {
+    "ID": 11,
+    "name": "FVV",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 12,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 13,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 14,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 15,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 16,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 17,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 18,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 19,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 20,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 21,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 22,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 23,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 24,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 25,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 26,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 27,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 28,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 29,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 30,
+    "name": "FVV",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 31,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "flu"
+  },
+  {
+    "ID": 32,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 33,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 34,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 35,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 36,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 37,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "flu"
+  },
+  {
+    "ID": 38,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 39,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 40,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 41,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 42,
+    "name": "FVV",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 43,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 44,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 45,
+    "name": "FVV",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 46,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 47,
+    "name": "FVV",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 48,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 49,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 50,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 51,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 52,
+    "name": "FVV",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 53,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 54,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 55,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 56,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 57,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "flu"
+  },
+  {
+    "ID": 58,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 59,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 60,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 61,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "cold"
+  },
+  {
+    "ID": 62,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 63,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 64,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 65,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 66,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "cold"
+  },
+  {
+    "ID": 67,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "cold"
+  },
+  {
+    "ID": 68,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "flu"
+  },
+  {
+    "ID": 69,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 70,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 71,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 72,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 73,
+    "name": "Klaw",
+    "gender": "F",
+    "disease": "flu"
+  },
+  {
+    "ID": 74,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 75,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "flu"
+  },
+  {
+    "ID": 76,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "cold"
+  },
+  {
+    "ID": 77,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 78,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "flu"
+  },
+  {
+    "ID": 79,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 80,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "flu"
+  },
+  {
+    "ID": 81,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 82,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "cold"
+  },
+  {
+    "ID": 83,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 84,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 85,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 86,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "cold"
+  },
+  {
+    "ID": 87,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 88,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "cold"
+  },
+  {
+    "ID": 89,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "mengitis"
+  },
+  {
+    "ID": 90,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 91,
+    "name": "Klaw",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 92,
+    "name": "KLow",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 93,
+    "name": "FVV",
+    "gender": "M",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 94,
+    "name": "PSkills",
+    "gender": "M",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 95,
+    "name": "PSkills",
+    "gender": "F",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 96,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "Kobe"
+  },
+  {
+    "ID": 97,
+    "name": "Green Ranger",
+    "gender": "F",
+    "disease": "cold"
+  },
+  {
+    "ID": 98,
+    "name": "KLow",
+    "gender": "F",
+    "disease": "hepititis B"
+  },
+  {
+    "ID": 99,
+    "name": "FVV",
+    "gender": "F",
+    "disease": "Laker Fan"
+  },
+  {
+    "ID": 100,
+    "name": "Green Ranger",
+    "gender": "M",
+    "disease": "Kobe"
+  }
+]
