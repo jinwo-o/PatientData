@@ -43,7 +43,6 @@ func (p *Post) GetByID(w http.ResponseWriter, r *http.Request) {
 	payload, err := p.repo.GetByID(r.Context(), int64(id))
 
 	if err != nil {
-		// respondWithError(w, http.StatusNoContent, "Content not found")
 		println("Error occured")
 	}
 

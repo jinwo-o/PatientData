@@ -50,9 +50,10 @@ func (m *mysqlPostRepo) Fetch(ctx context.Context, num int64) ([]*models.Post, e
 }
 
 func (m *mysqlPostRepo) GetByID(ctx context.Context, id int64) (*models.Post, error) {
-	query := "Select id, title, content From posts where id=?"
+	query := "Select ID, name, gender, disease From patient_table where id=?"
 
 	rows, err := m.fetch(ctx, query, id)
+	print(rows)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +69,7 @@ func (m *mysqlPostRepo) GetByID(ctx context.Context, id int64) (*models.Post, er
 }
 
 func (m *mysqlPostRepo) Create(ctx context.Context, p *models.Post) (int64, error) {
-	query := "Insert patients SET name=?, gender=?, disease=?"
+	query := "Insert patient_table SET name=?, gender=?, disease=?"
 
 	stmt, err := m.Conn.PrepareContext(ctx, query)
 	if err != nil {
