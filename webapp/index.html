@@ -54,9 +54,10 @@
 $(document).ready(function() {
     $('#patient-table').DataTable({
         ajax: {
-            // "url": "http://app:8080/posts",
+            // url: "http://app:8080/get",
             "url": "patients.json",
-            "dataSrc": ""
+            cache: false,
+            dataSrc: ""
         },
         columns: [
             { data : "ID" },

@@ -4,7 +4,7 @@
 #     sleep 0.1;
 # done;
 
-IP=$(curl app:8080/posts)
+IP=$(curl app:8080/get)
 
 data={'"data"':$IP}
 
