@@ -13,12 +13,8 @@ import (
 )
 
 func main() {
-	dbName := os.Getenv("patients")
-	dbPass := os.Getenv("root1234")
-	dbHost := os.Getenv("127.0.0.1")
-	dbPort := os.Getenv("3306")
 
-	connection, err := driver.ConnectSQL(dbHost, dbPort, "root", dbPass, dbName)
+	connection, err := driver.ConnectSQL()
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(-1)
