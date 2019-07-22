@@ -26,7 +26,7 @@ func main() {
 
 	pHandler := ph.NewPostHandler(connection)
 	r.Route("/", func(rt chi.Router) {
-		rt.Mount("/get", postRouter(pHandler))
+		rt.Mount("/patients", postRouter(pHandler))
 	})
 
 	fmt.Println("Server listen at :8080")
@@ -36,6 +36,10 @@ func main() {
 func postRouter(pHandler *ph.Post) http.Handler {
 	r := chi.NewRouter()
 	r.Get("/", pHandler.Fetch)
+	r.Get("/{id:[0-9]+}", pHandler.GetByID)
+	r.Post("/", pHandler.Create)
+	// r.Put("/{id:[0-9]+}", pHandler.Update)
+	r.Delete("/{id:[0-9]+}", pHandler.Delete)
 
 	return r
 }
