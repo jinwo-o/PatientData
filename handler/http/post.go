@@ -21,10 +21,15 @@ type Post struct {
 	repo repository.PostRepo
 }
 
+// Trying to enable CORS
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
+
 // Fetch all post data
 func (p *Post) Fetch(w http.ResponseWriter, r *http.Request) {
 	payload, _ := p.repo.Fetch(r.Context(), 5)
-
+	enableCors(&w)
 	respondwithJSON(w, http.StatusOK, payload)
 }
 
