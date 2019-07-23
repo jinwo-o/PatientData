@@ -55,8 +55,7 @@ func (p *Post) Create(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&post)
 
 	newID, err := p.repo.Create(r.Context(), &post)
-	// ?
-	fmt.Println(newID)
+	fmt.Println("New patient ID is:", newID)
 	if err != nil {
 		fmt.Println("Error: Unable to create patient")
 	}
