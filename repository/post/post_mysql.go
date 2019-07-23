@@ -1,6 +1,7 @@
 package Post
 
 import (
+	"fmt"
 	"context"
 	"database/sql"
 
@@ -53,7 +54,6 @@ func (m *mysqlPostRepo) GetByID(ctx context.Context, id int64) (*models.Post, er
 	query := "Select ID, name, gender, disease From patient_table where id=?"
 
 	rows, err := m.fetch(ctx, query, id)
-	print(rows)
 	if err != nil {
 		return nil, err
 	}
@@ -84,6 +84,24 @@ func (m *mysqlPostRepo) Create(ctx context.Context, p *models.Post) (int64, erro
 	}
 
 	return res.LastInsertId()
+}
+
+func (m *mysqlPostRepo) Update(ctx context.Context, p *models.Post) (*models.Post, error) {
+	query := "update patient_table set name=?, gender=?, disease=? where id=?"
+
+	stmt, err := m.Conn.PrepareContext(ctx, query)
+	if err != nil {
+		fmt.Println("Update Error has occred")
+		return nil, err
+	}
+	_, err = stmt.ExecContext(ctx, p.ID, p.Name, p.Gender, p.Disease)
+	if err != nil {
+		fmt.Println("Update Error2 has occred")
+		return nil, err
+	}
+	defer stmt.Close()
+
+	return p, nil
 }
 
 func (m *mysqlPostRepo) Delete(ctx context.Context, id int64) (bool, error) {

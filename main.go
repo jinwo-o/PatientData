@@ -38,7 +38,7 @@ func postRouter(pHandler *ph.Post) http.Handler {
 	r.Get("/", pHandler.Fetch)
 	r.Get("/{id:[0-9]+}", pHandler.GetByID)
 	r.Post("/", pHandler.Create)
-	// r.Put("/{id:[0-9]+}", pHandler.Update)
+	r.Put("/{id:[0-9]+}", pHandler.Update)
 	r.Delete("/{id:[0-9]+}", pHandler.Delete)
 
 	return r

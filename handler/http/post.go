@@ -43,7 +43,7 @@ func (p *Post) GetByID(w http.ResponseWriter, r *http.Request) {
 	payload, err := p.repo.GetByID(r.Context(), int64(id))
 
 	if err != nil {
-		println("Error occured")
+		fmt.Println("Error: ID does not exist")
 	}
 
 	respondwithJSON(w, http.StatusOK, payload)
@@ -55,13 +55,27 @@ func (p *Post) Create(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&post)
 
 	newID, err := p.repo.Create(r.Context(), &post)
+	// ?
 	fmt.Println(newID)
 	if err != nil {
-		fmt.Println("error has occured")
-		// respondWithError(w, http.StatusInternalServerError, "Server Error")
+		fmt.Println("Error: Unable to create patient")
 	}
 
 	respondwithJSON(w, http.StatusCreated, map[string]string{"message": "Successfully Created"})
+}
+
+// Update a patient by id
+func (p *Post) Update(w http.ResponseWriter, r *http.Request) {
+	id, _ := strconv.Atoi(chi.URLParam(r, "id"))
+	data := models.Post{ID: int64(id)}
+	json.NewDecoder(r.Body).Decode(&data)
+	payload, err := p.repo.Update(r.Context(), &data)
+
+	if err != nil {
+		fmt.Println("Error: Unable to update patient")
+	}
+
+	respondwithJSON(w, http.StatusOK, payload)
 }
 
 // Delete a patient
@@ -70,8 +84,7 @@ func (p *Post) Delete(w http.ResponseWriter, r *http.Request) {
 	_, err := p.repo.Delete(r.Context(), int64(id))
 
 	if err != nil {
-		// respondWithError(w, http.StatusInternalServerError, "Server Error")
-		fmt.Println("Error")
+		fmt.Println("Error: Unable to delete patient")
 	}
 
 	respondwithJSON(w, http.StatusMovedPermanently, map[string]string{"message": "Delete Successfully"})
