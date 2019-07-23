@@ -3,8 +3,8 @@
 CREATE DATABASE IF NOT EXISTS patients;
 USE patients;
 
-CREATE TABLE IF NOT EXISTS patient_table ( ID smallint unsigned not null, name varchar(20) not null, gender varchar(20) not null, \
-disease varchar(50) not null, constraint pk_example primary key (ID) );
+CREATE TABLE IF NOT EXISTS patient_table ( ID smallint unsigned not null AUTO_INCREMENT, name varchar(20) not null, gender varchar(20) not null, \
+disease varchar(50) not null, primary key (ID) );
 
 
 # Create a loop function; Generates 100 Patients
@@ -27,7 +27,7 @@ SET name_str =  (select elt(0.5 + RAND() * 5, 'Klaw', 'FVV', 'PSkills', 'KLow', 
 set gender_str = (select elt(0.5 + RAND() * 2, 'M', 'F'));
 SET disease_str = (select elt(0.5 + RAND() * 6, 'cold', 'flu', 'mengitis', 'hepititis B', 'Laker Fan', 'Kobe'));
 
-INSERT INTO patient_table ( ID, name, gender, disease ) VALUES ( id_int, name_str, gender_str, disease_str );
+INSERT INTO patient_table ( name, gender, disease ) VALUES ( name_str, gender_str, disease_str );
 SET  id_int = id_int + 1; 
 END WHILE;
 
