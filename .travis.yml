@@ -1,18 +1,21 @@
 language: go
 
+go:
+  - 1.8.x
+
 notifications:
   email: false
 
-# install:
-#   - go get -v github.com/Masterminds/glide 
-#   - make run
+install:
+  - go get -v github.com/Masterminds/glide 
+  - make run
 
-services:
-  - docker
+# services:
+#   - docker
 
-before_install:
-- docker build -t mysql sql
-- docker run mysql -e MYSQL_ROOT_PASSWORD=waterloo
+# before_install:
+# - docker build -t mysql sql
+# - docker run mysql -e MYSQL_ROOT_PASSWORD=waterloo
 
 # before_install:
 # - docker build -t 
