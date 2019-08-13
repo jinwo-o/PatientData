@@ -1,5 +1,12 @@
 language: go
 
+notifications:
+  email: false
+
+install:
+  - go get -v github.com/Masterminds/glide 
+  - make run
+
 services:
   - docker
 
@@ -14,7 +21,7 @@ services:
 
 before_install:
   - cp Dockerfile Dockerfile2
-  
+
   # - sudo rm /usr/local/bin/docker-compose
   # - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   # - chmod +x docker-compose
@@ -22,4 +29,4 @@ before_install:
   # - docker-compose up --build
 
 script:
-  - make run
+  - echo "Hello World"
