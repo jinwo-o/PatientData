@@ -3,12 +3,16 @@ language: go
 notifications:
   email: false
 
-install:
-  - go get -v github.com/Masterminds/glide 
-  - make run
+# install:
+#   - go get -v github.com/Masterminds/glide 
+#   - make run
 
 services:
   - docker
+
+before_install:
+- docker build -t mysql sql
+- docker run mysql -e MYSQL_ROOT_PASSWORD=waterloo
 
 # before_install:
 # - docker build -t 
@@ -19,8 +23,8 @@ services:
 # env:
 #   - DOCKER_COMPOSE_VERSION=1.4.2
 
-before_install:
-  - cp Dockerfile Dockerfile2
+# before_install:
+#   - cp Dockerfile Dockerfile2
 
   # - sudo rm /usr/local/bin/docker-compose
   # - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -28,5 +32,5 @@ before_install:
   # - sudo mv docker-compose /usr/local/bin
   # - docker-compose up --build
 
-script:
-  - echo "Hello World"
+# script:
+#   - echo "Hello World"
