@@ -4,8 +4,8 @@ services:
   - docker
 
 before_install:
-- docker build sql/.
-- docker run sql/.
+- docker build ./sql/.
+- docker run ./sql/.
 
 script:
 - make run
