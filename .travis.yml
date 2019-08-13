@@ -8,7 +8,7 @@ notifications:
 
 install:
   - go get -v github.com/Masterminds/glide 
-  - make run
+  - glide install
 
 # services:
 #   - docker
