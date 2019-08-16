@@ -1,39 +1,39 @@
-language: go
-
-go:
-  - 1.8.x
-
 notifications:
   email: false
 
+env:
+  DOCKER_COMPOSE_VERSION: 1.8.0
+before_install:
+  - sudo apt-get update
+  # old docker-compose
+  - docker-compose --version
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  # new docker-compose
+  - docker-compose --version
+  # start the containers in the background
+  - docker-compose pull
+  - docker-compose build
+  - docker-compose up -d
+  # check that containers are running
+  - docker container ls
+  # use -d flag to run this process in the background
+  # - docker exec -it jtree ./bin/jtree
+
 install:
-  - go get -v github.com/Masterminds/glide 
-  - glide install
+  - go get -v github.com/Masterminds/glide
+  # - go get github.com/Sirupsen/logrus
+  # - go get github.com/go-openapi/loads
+  # - go get github.com/go-openapi/strfmt
+  # - go get github.com/go-openapi/errors
+  # - go get github.com/go-openapi/runtime
+  # - go get github.com/jessevdk/go-flags
+  # - go get github.com/tylerb/graceful
+  # - go get github.com/Bio-core/jtree
+  # - go install -v 
+  - make get-deps
 
-# services:
-#   - docker
-
-# before_install:
-# - docker build -t mysql sql
-# - docker run mysql -e MYSQL_ROOT_PASSWORD=waterloo
-
-# before_install:
-# - docker build -t 
-
-# script:
-# - make run
-
-# env:
-#   - DOCKER_COMPOSE_VERSION=1.4.2
-
-# before_install:
-#   - cp Dockerfile Dockerfile2
-
-  # - sudo rm /usr/local/bin/docker-compose
-  # - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  # - chmod +x docker-compose
-  # - sudo mv docker-compose /usr/local/bin
-  # - docker-compose up --build
-
-# script:
-#   - echo "Hello World"
+script:
+  - make test
