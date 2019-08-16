@@ -19,3 +19,5 @@ Some info when running Postman:
 - GetByID: localhost:8080/patients/5 (for example)
 - Create: use Post, localhost:8080/patients and put {"name":"Sample","gender":"M","disease":"meningitis"} in the Body
 - Delete: use Delete, localhost:8080/patients/86
+
+Note: Go to https://travis-ci.com/jinwo-o/PatientData to see the test-suite CI
