@@ -1,4 +1,4 @@
-package jin
+package tests
 
 import (
 	// "bytes"
@@ -8,7 +8,7 @@ import (
 	// "net/http"
 	// "github.com/Bio-core/jtree/dummydata"
 
-	"log"
+	// "log"
 	"os"
 	"testing"
 
