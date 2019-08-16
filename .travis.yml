@@ -19,20 +19,9 @@ before_install:
   - docker-compose up -d
   # check that containers are running
   - docker container ls
-  # use -d flag to run this process in the background
-  # - docker exec -it jtree ./bin/jtree
 
 install:
   - go get -v github.com/Masterminds/glide
-  # - go get github.com/Sirupsen/logrus
-  # - go get github.com/go-openapi/loads
-  # - go get github.com/go-openapi/strfmt
-  # - go get github.com/go-openapi/errors
-  # - go get github.com/go-openapi/runtime
-  # - go get github.com/jessevdk/go-flags
-  # - go get github.com/tylerb/graceful
-  # - go get github.com/Bio-core/jtree
-  # - go install -v 
   - make get-deps
 
 script:

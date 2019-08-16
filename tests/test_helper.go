@@ -2,8 +2,6 @@ package tests
 
 import (
 	"net/http"
-
-	// "github.com/Bio-core/jtree/models"
 )
 
 //CheckPageResponse checks if a page that should respond is found correctly
@@ -40,12 +38,3 @@ func CheckNoPageResponse(url string) bool {
 	}
 	return false
 }
-
-// func returnQuery(fields, tables []string, conditions [][]string) models.Query {
-// 	query := models.Query{
-// 		SelectedFields:    fields,
-// 		SelectedTables:    tables,
-// 		SelectedCondition: conditions,
-// 	}
-// 	return query
-// }
