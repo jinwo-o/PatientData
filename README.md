@@ -1,21 +1,21 @@
 # **PatientData**
 
-Outputs an array of patient_id, name, gender, and disease. PatientData RESTAPI was written in Golang, with a mySQL database, and routed using chi
+PatientData RESTAPI was written in Golang, with a mySQL database, and routed using chi. The frontend is created using jquery datatables and Ajax calls
 
-**Prerequisites**
+**Docker-Compose**
 
 Must have mySQL running, golang, and other go-dependencies
 
-**1. Setup Database**
+$docker-compose up --build
 
-Go to the SQL directory and run database_rebuild.sh, $source database_rebuild.sh
+Then open up localhost:10001 to view the datatables
 
-You may need to edit database_rebuild.sh if your root password is not root1234
+Use Postman to make different requests
 
-(Run $source destroy_database.sh to drop the database)
-
-**2. Start Server**
-
-Go to the restAPI directory and run the makefile, $make run
-
-Open up localhost:8080/Posts
+Some info when running Postman:
+- 100 patients are already loaded
+- when patients are created they will be ID:101 and onwards
+- Get: localhost:8080/patients
+- GetByID: localhost:8080/patients/5 (for example)
+- Create: use Post, localhost:8080/patients and put {"name":"Sample","gender":"M","disease":"meningitis"} in the Body
+- Delete: use Delete, localhost:8080/patients/86
